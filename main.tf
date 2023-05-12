@@ -20,8 +20,3 @@ provider "azurerm" {
   skip_provider_registration = "true"
   features {}
 }
-
-resource "azurerm_resource_group" "rg" {
-  name     = "learn-lxgh-rg"
-  location = "southeastasia"
-}
