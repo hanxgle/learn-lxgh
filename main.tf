@@ -23,13 +23,11 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "new-learn-lxgh"
-  location = "southeastasia"
+  location = "westus2"
 }
 
-resource "azurerm_service_plan" "plan" {
-  name                = "app-service-plan"
-  location            = azurerm_resource_group.rg.location
+resource "azurerm_static_site" "swa" {
+  name                = "new-lxgh-swa"
   resource_group_name = azurerm_resource_group.rg.name
-  os_type = "Windows"
-  sku_name = "F1"
+  location            = azurerm_resource_group.rg.location
 }
